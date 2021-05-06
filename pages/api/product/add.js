@@ -9,13 +9,7 @@ export default async (req, res) => {
             'Content-Type': 'application/json',
             'Authorization': token,
         },
-        body: JSON.stringify({
-            name: "Product 4", 
-            description: "Product Description",
-            price: 100,
-            stock: 100,
-            sellerId: "6083b2c5028bad17901883b9"
-        })
+        body: JSON.stringify(res.body)
     })
     res.status(_res.status).json(await _res.json())
 }

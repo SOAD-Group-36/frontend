@@ -22,7 +22,7 @@ function LoginForm({ router, cookies }) {
 
         const result = await res.json()
 
-        if (res.status != 200) {
+        if (res.status !== 200) {
             alert(result.error)
         } else {
             console.log(result)

@@ -12,7 +12,11 @@ function CreateProductForm({ router, cookies }) {
 
         const res = await fetch('/api/product/add', {
             body: JSON.stringify({
-                name: event.target.name.value
+                name: event.target.name.value,
+                description: event.target.description.value,
+                price: event.target.price.value,
+                stock: event.target.stock.value,
+                sellerId: event.target.sellerId.value,
             }),
             headers: {
                 'Authorization': cookies.get('jwt')
@@ -28,15 +32,30 @@ function CreateProductForm({ router, cookies }) {
     return (
         <form onSubmit={addProduct} className="uk-form-horizontal uk-margin-large">
             <legend className="uk-legend">Create New Product</legend>
-            {/* <label htmlFor="username">Username</label>
+            <label htmlFor="name">Name</label>
             <div className="uk-margin">
-                <input className="uk-input" id="username" name="username" type="text" autoComplete="username" required />
+                <input className="uk-input" id="name" name="name" type="text" autoComplete="name" required />
             </div>
+            <label htmlFor="description">Description</label>
 
-            <label htmlFor="password">Password</label>
             <div className="uk-margin">
-                <input className="uk-input" id="password" name="password" type="text" autoComplete="password" required />
-            </div> */}
+                <input className="uk-input" id="description" name="description" type="text" autoComplete="description" required />
+            </div>
+            <label htmlFor="price">Price</label>
+
+            <div className="uk-margin">
+                <input className="uk-input" id="price" name="price" type="number" autoComplete="price" required />
+            </div>
+            <label htmlFor="stock">Stock</label>
+
+            <div className="uk-margin">
+                <input className="uk-input" id="stock" name="stock" type="number" autoComplete="stock" required />
+            </div>
+            <label htmlFor="sellerId">SellerId</label>
+
+            <div className="uk-margin">
+                <input className="uk-input" id="sellerId" name="sellerId" type="text" autoComplete="sellerId" required />
+            </div>
             <p className="uk-margin">
                 <button className="uk-button uk-button-primary" type="submit">CreateNew</button>
             </p>

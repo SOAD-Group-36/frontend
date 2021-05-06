@@ -53,15 +53,87 @@ export default function ViewProduct({ product }) {
                         <h3 className="uk-card-title">{product.name}</h3>
                         <p>{product.description}</p>
                         <div className="uk-card-badge uk-label-warning uk-label">
-                            {(product.stock < 5) ? `Only ${product.stock} Left` : '' }
+                            {(product.stock < 5) ? `Only ${product.stock} Left` : ''}
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="uk-card-footer">
-                <button className="uk-button u  k-button-primary uk-width-1-1 uk-margin-small-bottom">
-                    Buy Now
+            <div class="uk-card-footer uk-first-column">
+                <form action="/order/3" method="POST">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="5XlkrUPI92R0Ep20dP78iuJvj6VYT5uVkRwD1M4FVreNUsginsujd5jnU8T1Nx5y" />
+
+
+
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">
+                            Pincode
+                </label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="address_pincode" type="" placeholder="Pincode" />
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">
+                            State
+                </label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="address_state" type="" placeholder="State" />
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">
+                            City
+                </label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="address_city" type="" placeholder="City" />
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">
+                            Landmark
+                </label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="address_landmark" type="" placeholder="Landmark" />
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">
+                            House_no
+                </label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="address_house_no" type="" placeholder="House_no" />
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">
+                            Street
+                </label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="address_street" type="" placeholder="Street" />
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">Quantity
+                </label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" required="" id="form-horizontal-text" name="quantity" type="number" placeholder="Quantity" />
+                        </div>
+                    </div>
+
+                    <button class="uk-button u  k-button-primary uk-width-1-1 uk-margin-small-bottom">
+                        Buy Now
             </button>
+                </form>
             </div>
         </div >
     )
